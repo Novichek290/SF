@@ -1,9 +1,9 @@
-import java.util.ArrayList;
+import java.util.UUID;
 
 public class User {
     private String name;
     private String userName;
-    private int id;
+    private UUID id;
 
     public String getName() {
         return name;
@@ -11,14 +11,14 @@ public class User {
     public String getUserName() {
         return userName;
     }
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public User(int id, String name, String userName) {
+    public User(String name, String userName) {
         this.name = name;
         this.userName = userName;
-        this.id = id;
+        this.id = UUID.randomUUID();
     }
     public User() {}
 }

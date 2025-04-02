@@ -35,7 +35,7 @@ public class Main {
 
     public static void printUser (List<User> users){
         for (User user : users) {
-            System.out.printf("id:%d, name: %s, userName: %s, \n", user.getId(), user.getName(), user.getUserName());
+            System.out.printf("id:%s, name: %s, userName: %s, \n", user.getId(), user.getName(), user.getUserName());
         }
     }
 }
