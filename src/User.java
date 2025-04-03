@@ -1,3 +1,4 @@
+
 import java.util.UUID;
 
 public class User {
@@ -5,12 +6,16 @@ public class User {
     private String userName;
     private UUID id;
 
+    public int getId() {
+        return id;
+    }
     public String getName() {
         return name;
     }
     public String getUserName() {
         return userName;
     }
+  
     public UUID getId() {
         return id;
     }
@@ -20,5 +25,4 @@ public class User {
         this.userName = userName;
         this.id = UUID.randomUUID();
     }
-    public User() {}
 }
