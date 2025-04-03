@@ -1,5 +1,3 @@
-import java.util.UUID;
-
 public class User {
     int id;
     String name;
