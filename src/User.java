@@ -1,9 +1,11 @@
-public class User {
-    int id;
-    String name;
-    String userName;
+import java.util.UUID;
 
-    public int getId() {
+public class User {
+    UUID id;
+    private String name;
+    private String userName;
+
+    public UUID getId() {
         return id;
     }
     public String getName() {
@@ -13,10 +15,18 @@ public class User {
         return userName;
     }
 
-    public User(Integer id, String name, String userName) {
+    public User(UUID id, String name, String userName) {
         this.id = id;
         this.name = name;
         this.userName = userName;
     }
 
+    public User(String name, String userName) {
+        this.id=UUID.randomUUID();
+        this.name = name;
+        this.userName = userName;
+    }
+
+    public User() {
+    }
 }
