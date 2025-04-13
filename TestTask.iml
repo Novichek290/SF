@@ -5,9 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/com" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/yourcompany" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/yourcompany/project" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/yourcompany/project/util" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/denisComp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/denisComp/project" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/denisComp/util" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java/com" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java/com/DenisComp" isTestSource="true" />

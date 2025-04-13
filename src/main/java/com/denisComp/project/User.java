@@ -1,4 +1,3 @@
-package denisComp.project;
 
 import java.util.UUID;
 

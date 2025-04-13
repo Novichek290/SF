@@ -1,5 +1,6 @@
-package denisComp.project;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Controller {
@@ -15,7 +16,9 @@ public class Controller {
                     3->Show all users, sorted by nick
                     4->Show all users, sorted by id
                     5->Search user by nickName
-                    6->exit""");
+                    6->Is connect?
+                    
+                    0->exit""");
             switcher(scanner.nextInt());
         } while (true);
     }
@@ -74,7 +77,17 @@ public class Controller {
                 System.out.println();
                 break;
 
-            case 6:
+                case 6:
+                    try {
+                        Connection conn = DatabaseConnection.getConnection();
+                        System.out.println("Подключение успешно!");
+                        conn.close();
+                    } catch (SQLException e) {
+                        System.err.println("Ошибка подключения: " + e.getMessage());
+                    }
+                break;
+
+            case 0:
                 System.out.println("бывайте, ихтиандры хуевы");
                 System.exit(1);
                 break;
