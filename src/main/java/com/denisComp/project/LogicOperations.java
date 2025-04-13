@@ -1,4 +1,4 @@
-package com.yourcompany.project;
+package denisComp.project;
 
 import java.util.Comparator;
 import java.util.List;

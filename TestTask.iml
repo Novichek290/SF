@@ -7,7 +7,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/com" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/yourcompany" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/yourcompany/project" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/com/yourcompany/project/util" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java/com" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java/com/DenisComp" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java/com/DenisComp/UserList" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java/com/DenisComp/UserList/UserListProject" isTestSource="true" />
     </content>
   </component>
 </module>
