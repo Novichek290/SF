@@ -16,7 +16,6 @@ public class Controller {
                     3->Show all users, sorted by nick
                     4->Show all users, sorted by id
                     5->Search user by nickName
-                    6->Is connect?
                     
                     0->exit""");
             switcher(scanner.nextInt());
@@ -77,15 +76,15 @@ public class Controller {
                 System.out.println();
                 break;
 
-                case 6:
-                    try {
-                        Connection conn = DatabaseConnection.getConnection();
-                        System.out.println("Подключение успешно!");
-                        conn.close();
-                    } catch (SQLException e) {
-                        System.err.println("Ошибка подключения: " + e.getMessage());
-                    }
-                break;
+//                case 6:
+//                    try {
+//                        Connection conn = DatabaseConnection.getConnection();
+//                        System.out.println("Подключение успешно!");
+//                        conn.close();
+//                    } catch (SQLException e) {
+//                        System.err.println("Ошибка подключения: " + e.getMessage());
+//                    }
+//                break;
 
             case 0:
                 System.out.println("бывайте, ихтиандры хуевы");
