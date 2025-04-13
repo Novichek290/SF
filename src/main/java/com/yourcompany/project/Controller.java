@@ -1,36 +1,38 @@
+package com.yourcompany.project;
+
 import java.util.Scanner;
 
 public class Controller {
     private static final UserList userList = new UserList();
     private static final LogicOperations logicOperations = new LogicOperations();
 
-
     public static void start() {
         do {
             Scanner scanner = new Scanner(System.in);
-                System.out.println("""
-                        1->Add new user
-                        2->Show all users, sorted by name
-                        3->Show all users, sorted by nick
-                        4->Show all users, sorted by id
-                        5->Search user by nickName
-                        6->exit""");
+            System.out.println("""
+                    1->Add new user
+                    2->Show all users, sorted by name
+                    3->Show all users, sorted by nick
+                    4->Show all users, sorted by id
+                    5->Search user by nickName
+                    6->exit""");
             switcher(scanner.nextInt());
         } while (true);
     }
+
     public static void inputData() {
         Scanner scanner = new Scanner(System.in);
-        do{
+        do {
             String data = scanner.nextLine();
-            if(data.equalsIgnoreCase("quit")) {
+            if (data.equalsIgnoreCase("quit")) {
                 System.out.println();
                 start();
                 return;
             }
             String[] temp = data.split(" ");
-            logicOperations.addUser(temp[0].replaceAll(" ",""), temp[1].replaceAll(" ",""));
-            System.out.print("\t\tadded\n");
-        } while(true);
+            logicOperations.addUser(temp[0].replaceAll(" ", ""), temp[1].replaceAll(" ", ""));
+
+        } while (true);
     }
 
     public static void switcher(int num) {
@@ -63,7 +65,7 @@ public class Controller {
                 System.out.println("введи userName начинающийся с @:");
                 Scanner scanner = new Scanner(System.in);
                 String nick = scanner.nextLine();
-                if(nick.charAt(0)!='@') {
+                if (nick.charAt(0) != '@') {
                     System.out.println("неправильно ввёл ёптить. Давай по новой");
                     break;
                 }

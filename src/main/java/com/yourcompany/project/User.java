@@ -1,3 +1,5 @@
+package com.yourcompany.project;
+
 import java.util.UUID;
 
 public class User {
@@ -8,9 +10,11 @@ public class User {
     public UUID getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }
+
     public String getUserName() {
         return userName;
     }
@@ -22,11 +26,16 @@ public class User {
     }
 
     public User(String name, String userName) {
-        this.id=UUID.randomUUID();
+        this.id = UUID.randomUUID();
         this.name = name;
         this.userName = userName;
     }
 
     public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "id: [" + getId() + "] name: " + getName() + " Username: " + getUserName() + "\n";
     }
 }
