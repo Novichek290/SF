@@ -4,8 +4,9 @@ import java.util.Scanner;
 public class UserController {
 
     public static void start() {
-        do {
-            Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        boolean isRunning = true;
+        while(isRunning) {
             System.out.println("""
                     1->Add new user
                     2->Show all users, sorted by name
@@ -14,66 +15,65 @@ public class UserController {
                     5->Search user by nickName
                     
                     0->exit""");
-            switcher(scanner.nextInt());
-        } while (true);
+
+            int choice = scanner.nextInt();
+            isRunning = switcher(choice);
+        }
+        scanner.close();
+        System.out.println("Бывайте, ихтиандры хуевы!");
     }
 
     public static void inputData() {
-
         Scanner scanner = new Scanner(System.in);
-        do {
+        while (true) {
             String data = scanner.nextLine();
             if (data.equalsIgnoreCase("quit")) {
-                System.out.println();
-                start();
-                return;
+                break;
             }
+
             String[] temp = data.split(" ");
-
-            UserService.addUser(temp[0].replaceAll(" ", ""), temp[1].replaceAll(" ", ""));
-
-        } while (true);
+            if (temp.length >= 2) {
+                UserService.addUser(temp[0].trim(), temp[1].trim());
+            } else {
+                System.out.println("Ошибка: нужно ввести имя и ник через пробел!");
+            }
+        }
     }
 
-    public static void switcher(int num) {
+    public static boolean switcher(int command) {
 
-        switch (num) {
+        switch (command) {
             case 1:
                 System.out.println("Введи имя и nickName через пробел. Как закончишь - введи quit");
                 inputData();
-                break;
+                return true;
 
             case 2:
                 System.out.println("Тут все отсортированы по имени:");
                 UserService.printUser(UserService.getUserList());
                 System.out.println();
-                break;
-
+                return true;
             case 3:
                 System.out.println("Тут все отсортированы по nick");
                 UserService.sortByNick(UserService.getUserList());
                 System.out.println();
-                break;
-
+                return true;
             case 4:
                 System.out.println("Тут все отсортированы по id");
                 UserService.sortByID(UserService.getUserList());
                 System.out.println();
-                break;
-
+                return true;
             case 5:
                 System.out.println("введи userName начинающийся с @:");
                 Scanner scanner = new Scanner(System.in);
                 String nick = scanner.nextLine();
                 if (nick.charAt(0) != '@') {
                     System.out.println("неправильно ввёл ёптить. Давай по новой");
-                    break;
-                }
+                    return true;                }
                 System.out.println("Насяйнике, я насёл никнейманава:");
                 UserService.searchByNick(nick);
                 System.out.println();
-                break;
-
+                return true;
 //                case 6:
 //                    try {
 //                        Connection conn = DatabaseConnection.getConnection();
@@ -87,12 +87,10 @@ public class UserController {
             case 0:
                 System.out.println("бывайте, ихтиандры хуевы");
                 System.exit(1);
-                break;
-
+                return false;
             default:
-                System.out.println("Wrong parameter, try again");
-                System.out.println();
-                break;
+                System.out.println("\n---------->Wrong parameter, try again<----------\n");
+                return true;
         }
     }
 }
