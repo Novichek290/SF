@@ -1,11 +1,7 @@
 
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Controller {
-    private static final UserList userList = new UserList();
-    private static final LogicOperations logicOperations = new LogicOperations();
+public class UserController {
 
     public static void start() {
         do {
@@ -23,6 +19,7 @@ public class Controller {
     }
 
     public static void inputData() {
+
         Scanner scanner = new Scanner(System.in);
         do {
             String data = scanner.nextLine();
@@ -32,7 +29,8 @@ public class Controller {
                 return;
             }
             String[] temp = data.split(" ");
-            logicOperations.addUser(temp[0].replaceAll(" ", ""), temp[1].replaceAll(" ", ""));
+
+            UserService.addUser(temp[0].replaceAll(" ", ""), temp[1].replaceAll(" ", ""));
 
         } while (true);
     }
@@ -47,19 +45,19 @@ public class Controller {
 
             case 2:
                 System.out.println("Тут все отсортированы по имени:");
-                LogicOperations.printUser(userList.getListUser());
+                UserService.printUser(UserService.getUserList());
                 System.out.println();
                 break;
 
             case 3:
                 System.out.println("Тут все отсортированы по nick");
-                LogicOperations.printUserSortedByNickName(userList.getListUser());
+                UserService.sortByNick(UserService.getUserList());
                 System.out.println();
                 break;
 
             case 4:
                 System.out.println("Тут все отсортированы по id");
-                LogicOperations.printUserSortedByID(userList.getListUser());
+                UserService.sortByID(UserService.getUserList());
                 System.out.println();
                 break;
 
@@ -72,7 +70,7 @@ public class Controller {
                     break;
                 }
                 System.out.println("Насяйнике, я насёл никнейманава:");
-                logicOperations.search(nick);
+                UserService.searchByNick(nick);
                 System.out.println();
                 break;
 
